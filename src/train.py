@@ -97,4 +97,3 @@ if __name__ == "__main__":
         n_estimators=args.n_estimators,
         artifacts_dir=args.artifacts_dir,
     )
-

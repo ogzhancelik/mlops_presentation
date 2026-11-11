@@ -48,4 +48,3 @@ def test_training_and_evaluation_pipeline(tmp_path):
 
     assert evaluate_model(min_accuracy=0.90, min_f1=0.90, metrics_path=metrics_path) is True
     assert evaluate_model(min_accuracy=0.9999, min_f1=0.9999, metrics_path=metrics_path) is False
-
