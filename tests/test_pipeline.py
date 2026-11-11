@@ -21,8 +21,9 @@ def test_dataset_integrity():
     assert set(np.unique(y)) == {0, 1}
 
 
-def test_training_and_evaluation_pipeline(tmp_path):
+def test_training_and_evaluation_pipeline(tmp_path, monkeypatch):
     """Verify that training generates valid model.pkl & metrics.json and passes evaluation."""
+    monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
     artifacts_dir = str(tmp_path / "artifacts")
     payload = train_model(max_depth=4, n_estimators=30, artifacts_dir=artifacts_dir)
 
