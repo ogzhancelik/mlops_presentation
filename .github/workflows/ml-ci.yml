@@ -34,7 +34,7 @@ jobs:
         run: pytest tests/ -v
 
       - name: Train model
-        run: python src/train.py --max-depth 5 --n-estimators 50
+        run: python src/train.py --max-depth 6 --n-estimators 50
 
       - name: Evaluate model quality gate
         run: python src/evaluate.py --min-accuracy 0.92 --min-f1 0.92
